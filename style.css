@@ -1,0 +1,24 @@
+:root { --purple: #6e30f2; --black: #000000; }
+body { margin: 0; background: var(--black); color: white; font-family: sans-serif; overflow: hidden; }
+.screen { position: fixed; inset: 0; width: 100vw; height: 100vh; }
+.flex-center { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hidden { display: none !important; }
+
+.auth-card { background: #111; padding: 40px; border: 1px solid var(--purple); border-radius: 10px; text-align: center; }
+.btn-purple { background: var(--purple); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+
+.topbar { height: 60px; background: #080808; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; border-bottom: 1px solid #222; }
+.logo { font-weight: bold; color: var(--purple); font-size: 20px; }
+
+.overlay { background: black; z-index: 1000; }
+.loader-red { width: 40px; height: 40px; border: 4px solid #333; border-top-color: red; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.core-gui { position: absolute; top: 10px; left: 10px; z-index: 10; display: flex; gap: 5px; }
+.core-gui button { background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; padding: 5px 10px; cursor: pointer; }
+.chat-window { position: absolute; top: 40px; left: 0; width: 250px; height: 150px; background: rgba(0,0,0,0.5); padding: 5px; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+.modal-content { background: #111; padding: 20px; border: 1px solid var(--purple); width: 300px; }
+.player-row { display: flex; justify-content: space-between; margin-bottom: 10px; padding: 5px; border-bottom: 1px solid #222; }
+                                                                                                     
