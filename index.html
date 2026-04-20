@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Catsblock Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "firebase/app": "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js",
+            "firebase/auth": "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js",
+            "firebase/firestore": "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js",
+            "firebase/database": "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"
+          }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="auth-screen" class="screen flex-center">
+        <div class="auth-card">
+            <h1>Catsblock</h1>
+            <p>Log in to gain access to our platform!</p>
+            <button id="btn-login" class="btn-purple">Login via Google</button>
+            <p class="legal">By continuing, you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>.</p>
+        </div>
+    </div>
+
+    <div id="home-screen" class="screen hidden">
+        <nav class="topbar">
+            <span class="logo">Catsblock Game</span>
+            <button id="btn-create-game" class="btn-purple">Create</button>
+        </nav>
+        <div id="game-feed" class="grid">
+            </div>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <div id="loading-overlay" class="overlay flex-center">
+            <div class="loader-red"></div>
+            <p id="status-text">Connecting to the server...</p>
+        </div>
+        <canvas id="game-canvas"></canvas>
+        
+        <div class="core-gui">
+            <button id="btn-leave">Leave</button>
+            <button id="btn-chat">Chat</button>
+            <button id="btn-mod" class="hidden">Admin/Kick</button>
+            <div id="chat-window" class="chat-window hidden">
+                <div id="chat-logs"></div>
+                <input type="text" id="chat-input" placeholder="Say something..." maxlength="100">
+            </div>
+        </div>
+
+        <div id="mod-menu" class="modal hidden">
+            <div class="modal-content">
+                <h3>Server Players</h3>
+                <div id="player-list"></div>
+                <button id="close-mod">Close</button>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <div id="joystick"></div>
+            <button id="btn-jump">Jump</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
+
